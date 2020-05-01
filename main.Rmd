@@ -31,13 +31,16 @@ by_tag
 
 
 ##The above data has one observation for each of the pair, of a tag and year. Representing number of questions asked in that tag in that year and the total number od questions asked in the year. 
-
 ##Rather than just the counts of the tags, the concern here is the percentage change: the fraction of questions that year have that tag
+
+
 
 ```{r}
 by_tag <- by_tag %>% mutate( change = number / year_total)
 by_tag
 ```
+
+
 
 ##So far we've been learning and using the R programming language. Wouldn't we like to be sure it's a good investment for the future? Has it been keeping pace with other languages, or have people been switching out of it?
 
@@ -51,6 +54,7 @@ r_comp
 ```
 
 ##Rather than looking at the results in a table, we often want to create a visualization. Change over time is usually visualized with a line plot.
+
 
 
 ```{r}
@@ -72,26 +76,42 @@ python
 ggplot(python, aes(x = year, y = change, units= "in")) + geom_line()
 ```
 
+
+
 #What are the most asked - about tags. It's sure been fun to visualize and compare tags over time. The dplyr and ggplot2 tags may not have as many questions as R, but we can tell they're both growing quickly as well.
 
 #We might like to know which tags have the most questions overall, not just within a particular year. Right now, we have several rows for every tag, but we'll be combining them into one. That means we want group_by() and summarize().
+
+
 
 ```{r}
 tags_sorted <- by_tag %>% group_by(tag) %>% summarise( tag_total = sum(year_total)) %>% arrange(desc(tag_total))
 tags_sorted
 ```
+
+
+
 # How have large programming languages changed over time ?
 
 #We've looked at selected tags like R, ggplot2, and dplyr, and seen that they're each growing. What tags might be shrinking? A good place to start is to plot the tags that we just saw that were the most-asked about of all time, including JavaScript, Java and C#.
+
+
+
+
 ```{r}
 tags_highest <- head(tags_sorted$tag)
 by_tag_subset <- by_tag %>% filter( tag %in% tags_highest)
 ggplot(by_tag_subset, aes(year, change, color = tag)) + geom_line()
 ```
 
+
+
 #Top 10 Programming Languages
 
 #The TIOBE Programming Community index is an indicator of the popularity of programming languages. The index is updated once a month. The ratings are based on the number of skilled engineers world-wide, courses and third party vendors. Popular search engines such as Google, Bing, Yahoo!, Wikipedia, Amazon, YouTube and Baidu are used to calculate the ratings. It is important to note that the TIOBE index is not about the best programming language or the language in which most lines of code have been written. (https://www.tiobe.com/tiobe-index/)
+
+
+
 
 ```{r}
 prog_lang<- c('java', 'c', 'c++', 'python', 'visual basic.net', 'c#', 'javascript', 'sql', 'php', 'assemblt language')
@@ -110,6 +130,11 @@ library(lattice)
 require(dplyr)
 
 ```
+
+
+
+
+
 #Comparing R and Python
 
 #There is a lot of heated discussion over the topic, but there are some great, thoughtful articles as well. Some suggest Python is preferable as a general-purpose programming language, while others suggest data science is better served by a dedicated language and toolchain. The origins and development arcs of the two languages are compared and contrasted, often to support differing conclusions.
@@ -125,15 +150,20 @@ require(dplyr)
 #R with RStudio is often considered the best place to do exploratory data analysis. (https://blog.rstudio.com/2019/12/17/r-vs-python-what-s-the-best-for-language-for-data-science/)
 
 
+
+
+
+
 ```{r}
 r_and_python <- full_join(r_comp, python, by = c("year","tag", "number","year_total","change")) %>% arrange(desc(year, tag))
 r_and_python 
 ```
 
+
+
 ```{r}
 ggplot(r_and_python, aes(year, change, color = tag)) + geom_line()
 ```
-
 
 
 ```{r}
