@@ -3,8 +3,8 @@ title: "main"
 author: "Udayan Sawant"
 date: "5/1/2020"
 output:
-  html_document: default
-  word_document: default
+html_document: default
+word_document: default
 ---
 
 ```{r}
@@ -28,6 +28,8 @@ library(dplyr)
 by_tag <- read_csv("C:/Users/UDAYAN/Desktop/Projects/Rise and Fall of Programming Languages/by_tag.csv")
 by_tag
 ```
+
+
 ##The above data has one observation for each of the pair, of a tag and year. Representing number of questions asked in that tag in that year and the total number od questions asked in the year. 
 
 ##Rather than just the counts of the tags, the concern here is the percentage change: the fraction of questions that year have that tag
