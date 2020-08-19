@@ -24,10 +24,10 @@ There is a lot of heated discussion over the topic, but there are some great, th
 
 For individual data scientists, some common points to consider:
 
-•	Python is a great general programming language, with many libraries dedicated to data science.
-•	Many (if not most) general introductory programming courses start teaching with Python now.
-•	Python is the go-to language for many ETL and Machine Learning workflows.
-•	Many (if not most) introductory courses to statistics and data science teach R now.
-•	R has become the world’s largest repository of statistical knowledge with reference implementations for thousands, if not tens of thousands, of algorithms that have been vetted by experts. The documentation for many R packages includes links to the primary literature on the subject.
-•	R has a very low barrier to entry for doing exploratory analysis, and converting that work into a great report, dashboard, or API.
-•	R with RStudio is often considered the best place to do exploratory data analysis. (https://blog.rstudio.com/2019/12/17/r-vs-python-what-s-the-best-for-language-for-data-science/)
+* Python is a great general programming language, with many libraries dedicated to data science.
+* Many (if not most) general introductory programming courses start teaching with Python now.
+* Python is the go-to language for many ETL and Machine Learning workflows.
+* Many (if not most) introductory courses to statistics and data science teach R now.
+* R has become the world’s largest repository of statistical knowledge with reference implementations for thousands, if not tens of thousands, of algorithms that have been vetted by experts. The documentation for many R packages includes links to the primary literature on the subject.
+* R has a very low barrier to entry for doing exploratory analysis, and converting that work into a great report, dashboard, or API.
+* R with RStudio is often considered the best place to do exploratory data analysis. (https://blog.rstudio.com/2019/12/17/r-vs-python-what-s-the-best-for-language-for-data-science/)
